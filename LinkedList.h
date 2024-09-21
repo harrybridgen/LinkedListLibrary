@@ -20,7 +20,7 @@ Node *initNode(void);
 Node *getHead(LinkedList *linkedlist);
 LinkedList *initLinkedList(void);
 
-void appendLinkedList(LinkedList *linkedlist, void *data);
+void appendNewNode(LinkedList *linkedlist, void *data);
 void prependLinkedList(LinkedList *linkedlist, void *data);
 
 Node *removeHead(LinkedList *linkedlist);

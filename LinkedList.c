@@ -31,19 +31,26 @@ Node *getHead(LinkedList *linkedlist) { return linkedlist->head; }
 
 Node *getTail(LinkedList *linkedlist) { return linkedlist->tail; }
 
-void appendLinkedList(LinkedList *linkedlist, void *data) {
+void appendNewNode(LinkedList *linkedlist, void *data) {
 	if (linkedlist == NULL) {
-		printf("LinkedList is NULL");
+		printf("LinkedList is NULL\n");
 	}
 
 	Node *node;
 	node = initNode();
+
+	if (node == NULL) {
+		printf("Node is NULL\n");
+		return;
+	}
+
 	node->data = data;
 	node->prev = linkedlist->tail;
 
 	if (linkedlist->tail) {
 		linkedlist->tail->next = node;
 	}
+
 	linkedlist->tail = node;
 	if (!(linkedlist->head)) {
 		linkedlist->head = node;
@@ -61,17 +68,24 @@ Node *removeTail(LinkedList *linkedlist) {}
 
 void prependLinkedList(LinkedList *linkedlist, void *data) {
 	if (linkedlist == NULL) {
-		printf("LinkedList is NULL");
+		printf("LinkedList is NULL\n");
 	}
 
 	Node *node;
 	node = initNode();
+
+	if (node == NULL) {
+		printf("Node is NULL\n");
+		return;
+	}
+
 	node->data = data;
 	node->next = linkedlist->head;
 
 	if (linkedlist->head) {
 		linkedlist->head->prev = node;
 	}
+
 	linkedlist->head = node;
 	if (!(linkedlist->tail)) {
 		linkedlist->tail = node;

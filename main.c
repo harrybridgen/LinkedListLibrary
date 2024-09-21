@@ -9,16 +9,16 @@ int main() {
 	linkedlist = initLinkedList();
 
 	int x = 5;
-	appendLinkedList(linkedlist, &x);
+	appendNewNode(linkedlist, &x);
 
 	int y = 10;
-	appendLinkedList(linkedlist, &y);
+	appendNewNode(linkedlist, &y);
 
 	int a = 102;
-	appendLinkedList(linkedlist, &a);
+	appendNewNode(linkedlist, &a);
 
 	int c = 12;
-	appendLinkedList(linkedlist, &c);
+	appendNewNode(linkedlist, &c);
 
 	int j = 1212;
 	prependLinkedList(linkedlist, &j);
@@ -27,7 +27,7 @@ int main() {
 	node = removeHead(linkedlist);
 	int data = *(int *)node->data;
 	freeNode(node);
-	appendLinkedList(linkedlist, &data);
+	appendNewNode(linkedlist, &data);
 
 	printList(linkedlist);
 
